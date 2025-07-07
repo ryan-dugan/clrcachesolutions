@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | CLRCACHE Solutions</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Configuration & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#8B5CF6',
+                        'primary-dark': '#7C3AED',
+                        'secondary-accent': '#EC4899',
+                        'base-dark': '#111827',
+                        'base-light': '#1F2937',
+                        'text-light': '#E2E8F0',
+                        'text-medium': '#9CA3AF',
+                        'off-white': '#F9FAFB',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-base-dark text-text-medium font-sans antialiased">
+
+    <!-- Header -->
+    <header id="home" class="bg-base-dark/70 backdrop-blur-lg sticky top-0 z-50 border-b border-base-light/50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-off-white tracking-tight">
+                CLRCACHE <span class="text-primary">Solutions</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-primary transition duration-300">Home</a>
+                <a href="oursolution.html" class="hover:text-primary transition duration-300">Our Solution</a>
+                <a href="process.html" class="hover:text-primary transition duration-300">Process</a>
+                <a href="work.html" class="hover:text-primary transition duration-300">Our Work</a>
+                <a href="about.html" class="text-primary transition duration-300">About</a>
+                <a href="contact.html" class="hover:text-primary transition duration-300">Contact</a>
+            </nav>
+            <a href="new-contact-page.html" class="hidden md:inline-block bg-primary text-white font-bold px-5 py-2 rounded-lg shadow-lg hover:bg-primary-dark transition duration-300">
+                Start a Project
+            </a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-off-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 border-t border-base-light">
+            <a href="index.html" class="block py-2 text-off-white hover:text-primary">Home</a>
+            <a href="oursolution.html" class="block py-2 text-off-white hover:text-primary">Our Solution</a>
+            <a href="process.html" class="block py-2 text-off-white hover:text-primary">Process</a>
+            <a href="work.html" class="block py-2 text-off-white hover:text-primary">Our Work</a>
+            <a href="about.html" class="block py-2 text-primary">About</a>
+            <a href="contact.html" class="block py-2 text-off-white hover:text-primary">Contact</a>
+            <a href="contact.html" class="block mt-4 bg-primary text-white text-center font-bold px-5 py-2 rounded-lg shadow-md hover:bg-primary-dark">Start a Project</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Hero Section -->
+        <section class="relative overflow-hidden bg-base-dark py-24 md:py-32">
+            <div class="hero-bg-pattern"></div>
+            <div class="container relative mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-off-white leading-tight">
+                    We Build <span class="gradient-text">Clarity</span> in a Complex Digital World.
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-text-medium max-w-3xl mx-auto">
+                    CLRCACHE Solutions was founded on the principle that every business deserves a high-performance, beautiful, and reliable website without the typical agency overhead and complexity.
+                </p>
+            </div>
+        </section>
+
+        <!-- Our Mission Section -->
+        <section id="mission" class="bg-base-light py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-off-white">Our Mission: <span class="gradient-text">Your Success</span></h2>
+                        <p class="mt-4 text-lg text-text-medium">
+                            Our mission is to empower small businesses by providing a comprehensive, all-in-one web solution. We believe in transparency, quality, and partnership. We don't just build websites; we build the foundation for your digital growth.
+                        </p>
+                        <p class="mt-4 text-lg text-text-medium">
+                            We handle the technical complexities so you can focus on what you do best: running your business. From initial design to ongoing maintenance, we are your dedicated web partner.
+                        </p>
+                    </div>
+                    <div class="hidden md:block bg-off-white/10 p-8 rounded-xl">
+                        <h3 class="font-bold text-xl text-off-white mb-4">Our Core Values</h3>
+                        <ul class="space-y-3 text-text-medium">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Quality Over Quantity</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Transparent Pricing</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Long-Term Partnerships</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Client-Centric Approach</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact / CTA Section -->
+        <section id="contact" class="bg-base-dark py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="bg-off-white rounded-2xl shadow-2xl p-8 md:p-16 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-base-dark">Ready to Start Your Project?</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                        Let's discuss how we can bring your vision to life. Get in touch for a free, no-obligation consultation.
+                    </p>
+                    <div class="mt-10">
+                         <a href="mailto:hello@clrcache.solutions" class="bg-primary text-white font-bold px-10 py-4 rounded-lg shadow-xl hover:bg-primary-dark transition duration-300 text-xl">
+                            hello@clrcache.solutions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-base-dark border-t border-base-light/50">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-lg font-bold text-off-white">CLRCACHE <span class="text-primary">Solutions</span></p>
+                <div class="flex space-x-6 mt-4 md:mt-0 text-text-medium">
+                    <a href="index.html" class="hover:text-primary transition duration-300">Home</a>
+                    <a href="oursolution.html" class="hover:text-primary transition duration-300">Our Solution</a>
+                    <a href="process.html" class="hover:text-primary transition duration-300">Process</a>
+                    <a href="work.html" class="hover:text-primary transition duration-300">Our Work</a>
+                    <a href="about.html" class="hover:text-primary transition duration-300">About</a>
+                    <a href="contact.html" class="hover:text-primary transition duration-300">Contact</a>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-base-light/30 pt-6 text-center text-text-medium text-sm">
+                <p>&copy; <span id="year"></span> CLRCACHE Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+
+</body>
+</html>

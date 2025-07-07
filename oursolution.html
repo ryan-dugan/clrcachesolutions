@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Solution - CLRCACHE Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#8B5CF6', // A vibrant purple
+                        'primary-dark': '#7C3AED',
+                        'secondary': '#EC4899', // A bright pink
+                        'base-dark': '#111827', // A very dark gray, almost black
+                        'base': '#1F2937', // A dark gray
+                        'base-light': '#374151', // A lighter gray
+                        'off-white': '#F9FAFB',
+                        'text-medium': '#9CA3AF', // A medium gray for text
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-base-dark text-text-medium font-sans antialiased">
+
+    <!-- Header -->
+    <header id="home" class="bg-base-dark/70 backdrop-blur-lg sticky top-0 z-50 border-b border-base-light/50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-off-white tracking-tight">
+                CLRCACHE <span class="text-primary">Solutions</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-primary transition duration-300">Home</a>
+                <a href="oursolution.html" class="text-primary transition duration-300">Our Solution</a>
+                <a href="process.html" class="hover:text-primary transition duration-300">Process</a>
+                <a href="work.html" class="hover:text-primary transition duration-300">Our Work</a>
+                <a href="about.html" class="hover:text-primary transition duration-300">About</a>
+                <a href="contact.html" class="hover:text-primary transition duration-300">Contact</a>
+            </nav>
+            <a href="contact.html" class="hidden md:inline-block bg-primary text-white font-bold px-5 py-2 rounded-lg shadow-lg hover:bg-primary-dark transition duration-300">
+                Start a Project
+            </a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-off-white focus:outline-none">
+                <i data-feather="menu" class="h-6 w-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 border-t border-base-light">
+            <a href="index.html" class="block py-2 text-off-white hover:text-primary">Home</a>
+            <a href="oursolution.html" class="block py-2 text-primary">Our Solution</a>
+            <a href="process.html" class="block py-2 text-off-white hover:text-primary">Process</a>
+            <a href="work.html" class="block py-2 text-off-white hover:text-primary">Our Work</a>
+            <a href="about.html" class="block py-2 text-off-white hover:text-primary">About</a>
+            <a href="contact.html" class="block py-2 text-off-white hover:text-primary">Contact</a>
+            <a href="contact.html" class="block mt-4 bg-primary text-white text-center font-bold px-5 py-2 rounded-lg shadow-md hover:bg-primary-dark">Start a Project</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32 bg-base-dark relative overflow-hidden">
+            <div class="hero-bg-pattern"></div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-off-white leading-tight mb-4">The <span class="gradient-text">Complete Web Solution</span> for Your Business</h1>
+                <p class="text-lg md:text-xl text-text-medium max-w-3xl mx-auto">We provide everything you need to establish a powerful, professional, and profitable online presence.</p>
+            </div>
+        </section>
+
+        <!-- What You Offer Section -->
+        <section class="py-20 bg-base">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-off-white">What's Included in Our Package</h2>
+                    <p class="text-text-medium mt-4 max-w-2xl mx-auto">A comprehensive suite of services to build and maintain your digital storefront.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-base-dark p-8 rounded-lg card-hover-effect">
+                        <i data-feather="layout" class="h-10 w-10 text-primary mb-4"></i>
+                        <h3 class="text-xl font-bold text-off-white mb-2">Custom Website Design</h3>
+                        <p class="text-text-medium">A unique, tailor-made design that reflects your brand and engages your audience.</p>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="bg-base-dark p-8 rounded-lg card-hover-effect">
+                        <i data-feather="smartphone" class="h-10 w-10 text-primary mb-4"></i>
+                        <h3 class="text-xl font-bold text-off-white mb-2">Responsive Development</h3>
+                        <p class="text-text-medium">Flawless performance and viewing experience across all devices, from desktops to smartphones.</p>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="bg-base-dark p-8 rounded-lg card-hover-effect">
+                        <i data-feather="search" class="h-10 w-10 text-primary mb-4"></i>
+                        <h3 class="text-xl font-bold text-off-white mb-2">Technical SEO</h3>
+                        <p class="text-text-medium">A solid foundation for search engine visibility to help customers find you.</p>
+                    </div>
+                    <!-- Add more service cards as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Why It Matters Section -->
+        <section class="py-20 bg-base-dark">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-off-white">Solving Your Digital Problems</h2>
+                    <p class="text-text-medium mt-4 max-w-2xl mx-auto">An outdated or poorly built website can cost you customers. We fix that.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-base p-6 rounded-lg"><p class="text-off-white"><i data-feather="x-circle" class="inline-block mr-2 text-red-500"></i>Outdated and unprofessional design.</p></div>
+                    <div class="bg-base p-6 rounded-lg"><p class="text-off-white"><i data-feather="x-circle" class="inline-block mr-2 text-red-500"></i>Poor experience on mobile devices.</p></div>
+                    <div class="bg-base p-6 rounded-lg"><p class="text-off-white"><i data-feather="x-circle" class="inline-block mr-2 text-red-500"></i>Slow load times losing visitors.</p></div>
+                    <div class="bg-base p-6 rounded-lg"><p class="text-off-white"><i data-feather="x-circle" class="inline-block mr-2 text-red-500"></i>Invisible on Google and other search engines.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who It's For Section -->
+        <section class="py-20 bg-base">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-off-white">Perfect For Businesses Like Yours</h2>
+                <p class="text-text-medium mt-4 max-w-2xl mx-auto">Our solution is designed for small businesses, professionals, and startups ready to make a serious impact online.</p>
+                <div class="mt-8 flex justify-center space-x-4">
+                    <span class="bg-primary/20 text-primary font-bold py-2 px-4 rounded-full">Local Businesses</span>
+                    <span class="bg-primary/20 text-primary font-bold py-2 px-4 rounded-full">Solo Professionals</span>
+                    <span class="bg-primary/20 text-primary font-bold py-2 px-4 rounded-full">Startups</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Placeholder -->
+        <section class="py-20 bg-base-dark">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-off-white">What Our Clients Say</h2>
+                <div class="mt-8 max-w-2xl mx-auto bg-base p-8 rounded-lg">
+                    <p class="text-text-medium italic">"Working with CLRCACHE Solutions was a game-changer for our business. The new site is fast, beautiful, and already bringing in new leads."</p>
+                    <p class="text-off-white font-bold mt-4">- A Future Happy Client</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-base-dark border-t border-base-light/50">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-lg font-bold text-off-white">CLRCACHE <span class="text-primary">Solutions</span></p>
+                <div class="flex space-x-6 mt-4 md:mt-0 text-text-medium">
+                    <a href="index.html" class="hover:text-primary transition duration-300">Home</a>
+                    <a href="oursolution.html" class="hover:text-primary transition duration-300">Our Solution</a>
+                    <a href="process.html" class="hover:text-primary transition duration-300">Process</a>
+                    <a href="work.html" class="hover:text-primary transition duration-300">Our Work</a>
+                    <a href="about.html" class="hover:text-primary transition duration-300">About</a>
+                    <a href="contact.html" class="hover:text-primary transition duration-300">Contact</a>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-base-light/30 pt-6 text-center text-text-medium text-sm">
+                <p>&copy; <span id="year"></span> CLRCACHE Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
