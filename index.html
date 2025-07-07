@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLRCACHE Solutions | Custom Web Design & Development</title>
+    <title>CLRCACHE Solutions | All-in-One Web Design & Development</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,63 +22,36 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'primary': '#4FD1C5', // Teal
-                        'primary-dark': '#38B2AC', // Darker Teal
-                        'base-dark': '#1A202C', // Dark Slate
-                        'base-light': '#2D3748', // Lighter Slate
+                        'primary': '#8B5CF6', // Purple-500
+                        'primary-dark': '#7C3AED', // Purple-600
+                        'secondary-accent': '#EC4899', // Pink-500
+                        'base-dark': '#111827', // Gray-900 (Deeper, more neutral dark)
+                        'base-light': '#1F2937', // Gray-800 (Lighter, neutral dark for section BGs)
                         'text-light': '#E2E8F0', // Light Gray
-                        'text-medium': '#A0AEC0', // Medium Gray
-                        'off-white': '#F7FAFC',
+                        'text-medium': '#9CA3AF', // Medium Gray (Slightly lighter for better contrast)
+                        'off-white': '#F9FAFB', // Very light grey for cards
                     }
                 }
             }
         }
     </script>
 
-    <style>
-        /* Additional custom styles for a polished look */
-        .card-hover-effect {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            border: 1px solid transparent;
-        }
-        .card-hover-effect:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2);
-            border-color: #4FD1C5;
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #4FD1C5, #a8e063);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hero-bg-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                radial-gradient(circle at 1px 1px, #2D3748 1px, transparent 0);
-            background-size: 2rem 2rem;
-            opacity: 0.3;
-            mask-image: linear-gradient(to bottom, white 50%, transparent 100%);
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-base-dark text-text-medium font-sans antialiased">
 
     <!-- Header -->
-    <header id="home" class="bg-base-dark/70 backdrop-blur-lg sticky top-0 z-50">
+    <header id="home" class="bg-base-dark/70 backdrop-blur-lg sticky top-0 z-50 border-b border-base-light/50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-2xl font-extrabold text-off-white tracking-tight">
                 CLRCACHE <span class="text-primary">Solutions</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="#services" class="hover:text-primary transition duration-300">Services</a>
+                <a href="#services" class="hover:text-primary transition duration-300">Our Solution</a>
                 <a href="#process" class="hover:text-primary transition duration-300">Process</a>
                 <a href="#contact" class="hover:text-primary transition duration-300">Contact</a>
             </nav>
-            <a href="#contact" class="hidden md:inline-block bg-primary text-base-dark font-bold px-5 py-2 rounded-lg shadow-lg hover:bg-primary-dark transition duration-300">
+            <a href="#contact" class="hidden md:inline-block bg-primary text-white font-bold px-5 py-2 rounded-lg shadow-lg hover:bg-primary-dark transition duration-300">
                 Start a Project
             </a>
             <!-- Mobile Menu Button -->
@@ -88,39 +61,39 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 border-t border-base-light">
-            <a href="#services" class="block py-2 text-off-white hover:text-primary">Services</a>
+            <a href="#services" class="block py-2 text-off-white hover:text-primary">Our Solution</a>
             <a href="#process" class="block py-2 text-off-white hover:text-primary">Process</a>
             <a href="#contact" class="block py-2 text-off-white hover:text-primary">Contact</a>
-            <a href="#contact" class="block mt-4 bg-primary text-base-dark text-center font-bold px-5 py-2 rounded-lg shadow-md hover:bg-primary-dark">Start a Project</a>
+            <a href="#contact" class="block mt-4 bg-primary text-white text-center font-bold px-5 py-2 rounded-lg shadow-md hover:bg-primary-dark">Start a Project</a>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section class="relative overflow-hidden">
+        <section class="relative overflow-hidden bg-base-dark">
             <div class="hero-bg-pattern"></div>
             <div class="container relative mx-auto px-6 py-24 md:py-40">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="text-center md:text-left">
                         <h1 class="text-4xl md:text-6xl font-extrabold text-off-white leading-tight">
-                            Websites that <span class="gradient-text">Perform</span> and <span class="gradient-text">Impress</span>.
+                            The <span class="gradient-text">All-in-One</span> Website Solution.
                         </h1>
                         <p class="mt-6 text-lg md:text-xl text-text-medium max-w-xl mx-auto md:mx-0">
-                            I build fast, reliable, and beautiful static websites for small businesses and professionals who need a powerful online presence without the complexity.
+                           Your complete package for a powerful online presence. We build, host, maintain, and optimize your website, so you can focus on your business.
                         </p>
                         <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                            <a href="#contact" class="bg-primary text-base-dark font-bold px-8 py-3 rounded-lg shadow-xl hover:bg-primary-dark transition duration-300 text-lg">
+                            <a href="#contact" class="bg-primary text-white font-bold px-8 py-3 rounded-lg shadow-xl hover:bg-primary-dark transition duration-300 text-lg">
                                 Get Your Free Quote
                             </a>
-                            <a href="#services" class="bg-base-light text-off-white font-semibold px-8 py-3 rounded-lg shadow-xl hover:bg-gray-700 transition duration-300 text-lg">
-                                View Services
+                            <a href="#services" class="bg-base-light text-off-white font-semibold px-8 py-3 rounded-lg shadow-xl hover:bg-gray-600 transition duration-300 text-lg">
+                                Learn More
                             </a>
                         </div>
                     </div>
                     <div class="hidden md:block">
                         <!-- Abstract Visual Element -->
                         <div class="relative w-full h-80">
-                           <div class="absolute inset-0 bg-base-light/50 rounded-2xl transform rotate-6 transition duration-500 hover:rotate-0 hover:scale-105"></div>
+                           <div class="absolute inset-0 bg-base-light/30 rounded-2xl transform rotate-6 transition duration-500 hover:rotate-0 hover:scale-105"></div>
                            <div class="absolute inset-4 bg-base-light rounded-2xl transform -rotate-6 transition duration-500 hover:rotate-0 hover:scale-105 flex items-center justify-center p-4">
                                <svg class="w-24 h-24 text-primary opacity-50" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                   <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
@@ -133,46 +106,52 @@
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="bg-off-white py-20 md:py-28">
+        <section id="services" class="bg-base-light py-20 md:py-28">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-base-dark">Core Service Offerings</h2>
-                    <p class="mt-4 text-lg text-gray-600">A complete package to get your business online effectively and affordably.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-off-white">Your <span class="gradient-text">Complete</span> Web Solution</h2>
+                    <p class="mt-4 text-lg text-text-medium">Every project includes design, development, hosting, maintenance, and SEO. No hidden fees, no complexity.</p>
                 </div>
                 <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Service Card 1 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg card-hover-effect border-gray-200">
-                        <h3 class="text-xl font-bold mb-3 text-base-dark">Custom 5-Page Static Sites</h3>
-                        <p class="text-gray-600">Perfectly crafted Home, About, Services, Blog, and Contact pages built from scratch to match your brand identity.</p>
+                    <div class="bg-off-white p-8 rounded-xl shadow-lg card-hover-effect">
+                        <div class="mb-4">
+                            <svg class="w-10 h-10 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-base-dark">Custom Design & Development</h3>
+                        <p class="text-gray-600">A stunning, responsive 5-page static site designed from scratch to perfectly represent your brand and engage your audience.</p>
                     </div>
                     <!-- Service Card 2 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg card-hover-effect border-gray-200">
-                        <h3 class="text-xl font-bold mb-3 text-base-dark">Responsive & Mobile-First</h3>
-                        <p class="text-gray-600">Your site is guaranteed to look and work perfectly on all devices, from large desktops to the smallest smartphones.</p>
+                    <div class="bg-off-white p-8 rounded-xl shadow-lg card-hover-effect">
+                        <div class="mb-4">
+                            <svg class="w-10 h-10 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h7.5" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-base-dark">Managed Hosting & Security</h3>
+                        <p class="text-gray-600">Fast, secure, and reliable hosting is included. We handle the setup, SSL certificates, and ensure your site is always online.</p>
                     </div>
                     <!-- Service Card 3 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg card-hover-effect border-gray-200">
-                        <h3 class="text-xl font-bold mb-3 text-base-dark">Performance Optimized</h3>
-                        <p class="text-gray-600">I focus on fast load times and efficient code to ensure your visitors have a smooth and enjoyable experience.</p>
+                    <div class="bg-off-white p-8 rounded-xl shadow-lg card-hover-effect">
+                        <div class="mb-4">
+                           <svg class="w-10 h-10 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.82m5.84-2.56a12.026 12.026 0 01-5.84 7.38m5.84-7.38l-7.38-5.84m0 0a12.026 12.026 0 017.38-5.84m-7.38 5.84l-5.84-7.38m5.84 7.38v4.82" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-base-dark">SEO & Ongoing Maintenance</h3>
+                        <p class="text-gray-600">We implement foundational SEO to boost your visibility and provide ongoing maintenance and backups for complete peace of mind.</p>
                     </div>
                 </div>
-                 <div class="text-center mt-12">
-                     <p class="text-gray-600">Need more? Optional add-ons like SEO setup, hosting, and maintenance are available.</p>
-                 </div>
             </div>
         </section>
 
         <!-- Process Section -->
-        <section id="process" class="py-20 md:py-28">
+        <section id="process" class="bg-base-dark py-20 md:py-28">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-off-white">A Clear Path to Launch</h2>
-                    <p class="mt-4 text-lg text-text-medium">My process is transparent and collaborative, ensuring we build the right site for you.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-off-white">A <span class="gradient-text">Clear Path</span> to Launch</h2>
+                    <p class="mt-4 text-lg text-text-medium">Our process is transparent and collaborative, ensuring we build the right site for you.</p>
                 </div>
                 <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     <!-- Step 1 -->
                     <div class="flex flex-col items-center">
-                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-base-light border-2 border-primary/50 mb-4">
+                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-base-light border-2 border-primary mb-4">
                             <span class="text-3xl font-bold text-primary">1</span>
                         </div>
                         <h3 class="text-xl font-bold text-off-white mb-2">Discovery & Strategy</h3>
@@ -180,34 +159,34 @@
                     </div>
                     <!-- Step 2 -->
                     <div class="flex flex-col items-center">
-                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-base-light border-2 border-primary/50 mb-4">
+                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-base-light border-2 border-primary mb-4">
                             <span class="text-3xl font-bold text-primary">2</span>
                         </div>
                         <h3 class="text-xl font-bold text-off-white mb-2">Design & Develop</h3>
-                        <p>I design and code your website from the ground up, with a focus on clean aesthetics and performance.</p>
+                        <p>We design and code your website from the ground up, with a focus on clean aesthetics and performance.</p>
                     </div>
                     <!-- Step 3 -->
                     <div class="flex flex-col items-center">
-                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-base-light border-2 border-primary/50 mb-4">
+                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-base-light border-2 border-primary mb-4">
                             <span class="text-3xl font-bold text-primary">3</span>
                         </div>
                         <h3 class="text-xl font-bold text-off-white mb-2">Launch & Support</h3>
-                        <p>After final approval, I'll deploy your site and provide support to ensure a smooth launch.</p>
+                        <p>We deploy your site to our managed hosting and begin our ongoing support and maintenance to ensure it runs flawlessly.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact / CTA Section -->
-        <section id="contact" class="bg-off-white py-20 md:py-28">
+        <section id="contact" class="bg-base-light py-20 md:py-28">
             <div class="container mx-auto px-6">
-                <div class="bg-base-dark rounded-2xl shadow-2xl p-8 md:p-16 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-off-white">Let's Build Your New Website</h2>
-                    <p class="mt-4 text-lg text-text-medium max-w-2xl mx-auto">
-                        Ready to get started? Fill out the form below or email me directly. I'll get back to you within one business day to discuss your project.
+                <div class="bg-off-white rounded-2xl shadow-2xl p-8 md:p-16 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-base-dark">Let's Build Your <span class="gradient-text">New Website</span></h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                        Ready for a complete, hassle-free web solution? Reach out to us directly. We'll get back to you within one business day to discuss your project.
                     </p>
                     <div class="mt-10">
-                         <a href="mailto:hello@clrcache.solutions" class="bg-primary text-base-dark font-bold px-10 py-4 rounded-lg shadow-xl hover:bg-primary-dark transition duration-300 text-xl">
+                         <a href="mailto:hello@clrcache.solutions" class="bg-primary text-white font-bold px-10 py-4 rounded-lg shadow-xl hover:bg-primary-dark transition duration-300 text-xl">
                             hello@clrcache.solutions
                         </a>
                     </div>
@@ -218,33 +197,23 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-base-dark border-t border-base-light">
+    <footer class="bg-base-dark border-t border-base-light/50">
         <div class="container mx-auto px-6 py-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <p class="text-lg font-bold text-off-white">CLRCACHE <span class="text-primary">Solutions</span></p>
                 <div class="flex space-x-6 mt-4 md:mt-0 text-text-medium">
-                    <a href="#services" class="hover:text-primary transition duration-300">Services</a>
+                    <a href="#services" class="hover:text-primary transition duration-300">Our Solution</a>
                     <a href="#process" class="hover:text-primary transition duration-300">Process</a>
                     <a href="mailto:hello@clrcache.solutions" class="hover:text-primary transition duration-300">Contact</a>
                 </div>
             </div>
-            <div class="mt-8 border-t border-base-light/50 pt-6 text-center text-text-medium text-sm">
+            <div class="mt-8 border-t border-base-light/30 pt-6 text-center text-text-medium text-sm">
                 <p>&copy; <span id="year"></span> CLRCACHE Solutions. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script src="js/main.js" defer></script>
 
 </body>
 </html>
