@@ -55,7 +55,7 @@
 .aurora-shape {
     position: absolute;
     border-radius: 50%;
-    filter: blur(90px);
+    filter: blur(120px);
     opacity: 0.25;
 }
 
@@ -65,7 +65,7 @@
     background: #7c3aed; /* primary color */
     top: -150px;
     left: -200px;
-    animation: moveAurora1 20s infinite alternate ease-in-out;
+    animation: moveAurora1 15s infinite alternate ease-in-out;
 }
 
 .aurora-shape-2 {
@@ -74,7 +74,7 @@
     background: #4f46e5; /* indigo-500 */
     bottom: -150px;
     right: -150px;
-    animation: moveAurora2 25s infinite alternate ease-in-out;
+    animation: moveAurora2 17s infinite alternate ease-in-out;
 }
 
 @keyframes moveAurora1 {
@@ -213,4 +213,25 @@
 
 .feature-card:hover::after {
     transform: translate(-50%, -50%) scale(2.5);
+}
+
+/* --- Comparison Table Highlight --- */
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.highlight-col {
+    background: linear-gradient(120deg, rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.25), rgba(168, 85, 247, 0.15));
+    background-size: 200% 200%;
+    animation: shimmer 5s ease infinite;
+    border-left: 2px solid rgba(168, 85, 247, 0.3);
+    box-shadow: inset 3px 0px 8px -4px rgba(168, 85, 247, 0.4);
 }
