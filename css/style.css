@@ -27,3 +27,190 @@
     opacity: 0.2;
     mask-image: linear-gradient(to bottom, #111827 50%, transparent 100%);
 }
+
+/* Glassmorphism Container */
+.glassmorphism-container {
+    position: relative;
+    background: rgba(30, 32, 47, 0.5);
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Aurora Background */
+.aurora-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.aurora-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.25;
+}
+
+.aurora-shape-1 {
+    width: 500px;
+    height: 500px;
+    background: #7c3aed; /* primary color */
+    top: -150px;
+    left: -200px;
+    animation: moveAurora1 20s infinite alternate ease-in-out;
+}
+
+.aurora-shape-2 {
+    width: 450px;
+    height: 450px;
+    background: #4f46e5; /* indigo-500 */
+    bottom: -150px;
+    right: -150px;
+    animation: moveAurora2 25s infinite alternate ease-in-out;
+}
+
+@keyframes moveAurora1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(150px, 80px) scale(1.3);
+    }
+}
+
+@keyframes moveAurora2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(-120px, -90px) scale(1.2);
+    }
+}
+
+.glassmorphism-container .flex.items-start {
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 0.5rem; /* 8px */
+}
+
+.glassmorphism-container .flex.items-start:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.services-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    opacity: 0.5;
+}
+
+.header-text-shadow {
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Custom Button Styles --- */
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.25;
+}
+
+.btn-primary {
+    background-image: linear-gradient(to right, #8b5cf6, #c026d3, #8b5cf6);
+    color: #f0f2f5;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
+    background-size: 200% auto;
+    background-position: 0% 0%;
+}
+
+.btn-primary:hover {
+    background-position: 100% 0%;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: #4b5563; /* gray-600 */
+    color: #d1d5db; /* gray-300 */
+}
+
+.btn-secondary:hover {
+    background-color: #4b5563;
+    color: #f0f2f5;
+}
+
+.btn svg {
+    margin-left: 0.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn:hover svg {
+    transform: translateX(4px);
+}
+
+/* --- Feature Card Hover Effect --- */
+.feature-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px; /* Bolder top border */
+    background-color: #a855f7; /* Primary color */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: -1; /* Place it behind the content */
+}
+
+.feature-card:hover::after {
+    transform: translate(-50%, -50%) scale(2.5);
+}
