@@ -30,4 +30,23 @@ document.addEventListener('DOMContentLoaded', function() {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+
+    // Comparison table column hover effect
+    const table = document.getElementById('comparison-table');
+    if (table) {
+        const highlightCells = table.querySelectorAll('.highlight-col');
+
+        const addHoverClass = () => {
+            highlightCells.forEach(cell => cell.classList.add('highlight-col-hover'));
+        };
+
+        const removeHoverClass = () => {
+            highlightCells.forEach(cell => cell.classList.remove('highlight-col-hover'));
+        };
+
+        highlightCells.forEach(cell => {
+            cell.addEventListener('mouseenter', addHoverClass);
+            cell.addEventListener('mouseleave', removeHoverClass);
+        });
+    }
 });

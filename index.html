@@ -76,7 +76,7 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="relative overflow-hidden bg-base-dark">
+        <section class="relative overflow-hidden bg-base-dark section-divider">
             <div class="hero-bg-pattern"></div>
             <div class="container relative mx-auto px-6 py-24 md:py-40">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -112,7 +112,7 @@
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="relative bg-base-light py-20 md:py-28 overflow-hidden">
+        <section id="services" class="relative bg-base-light py-20 md:py-28 overflow-hidden section-divider">
             <div class="services-bg-pattern"></div>
             <div class="relative container mx-auto px-6">
                 <!-- Section Header -->
@@ -214,7 +214,7 @@
         </section>
 
         <!-- Why Choose Us Section -->
-        <section id="why-us" class="relative overflow-hidden bg-base-dark py-20 md:py-28">
+        <section id="why-us" class="relative overflow-hidden bg-base-dark py-20 md:py-28 section-divider">
             <div class="absolute top-1/2 left-1/2 w-[80rem] h-[80rem] bg-primary/10 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl opacity-50" aria-hidden="true"></div>
             <div class="container relative mx-auto px-6">
                 <div class="text-center max-w-4xl mx-auto">
@@ -310,7 +310,7 @@
                         <div class="max-w-4xl mx-auto">
                             <h3 class="text-2xl md:text-3xl font-bold text-off-white text-center mb-8">The Bottom Line:</h3>
                             <div class="overflow-hidden rounded-lg border border-base-light/30">
-                                <table class="w-full text-left text-text-medium">
+                                <table id="comparison-table" class="w-full text-left text-text-medium">
                                     <thead class="bg-base-dark/50 text-off-white">
                                         <tr>
                                             <th class="p-4 font-semibold">Feature</th>
@@ -363,83 +363,30 @@
             </div>
         </section>
 
-        <!-- Our Solution Section -->
-        <section id="solution" class="bg-base-dark py-20 md:py-28">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Our Solution: A Complete Package</h2>
-                <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">We handle everything from design to deployment, providing a seamless, all-in-one service. Here’s what’s included:</p>
-                
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Card 1: Custom Design -->
-                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-lg text-left transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-primary text-4xl mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118L2.05 10.1c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.95-.69L11.049 2.927z" /></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Custom Design & Branding</h3>
-                        <p class="text-gray-300">We create a unique, professional design that reflects your brand identity and engages your target audience effectively.</p>
-                    </div>
-
-                    <!-- Card 2: Web Development -->
-                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-lg text-left transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-primary text-4xl mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Blazing-Fast Development</h3>
-                        <p class="text-gray-300">Using modern, lightweight technologies, we build a high-performance website that loads quickly and runs smoothly.</p>
-                    </div>
-
-                    <!-- Card 3: SEO Optimization -->
-                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-lg text-left transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-primary text-4xl mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Core SEO Integration</h3>
-                        <p class="text-gray-300">We implement foundational SEO best practices to improve your site's visibility on search engines from day one.</p>
-                    </div>
-
-                    <!-- Card 4: Hosting -->
-                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-lg text-left transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-primary text-4xl mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" /></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Managed Hosting & CDN</h3>
-                        <p class="text-gray-300">Your site is hosted on a global, high-speed CDN, ensuring reliability, security, and fast load times for all users.</p>
-                    </div>
-
-                    <!-- Card 5: Ongoing Maintenance -->
-                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-lg text-left transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-primary text-4xl mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.096 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Ongoing Maintenance</h3>
-                        <p class="text-gray-300">We handle all technical updates, security patches, and performance monitoring so you can focus on your business.</p>
-                    </div>
-
-                    <!-- Card 6: Dedicated Support -->
-                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-lg text-left transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-primary text-4xl mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Dedicated Support</h3>
-                        <p class="text-gray-300">Get direct access to our team for any questions, content updates, or new feature requests you may have.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Contact / CTA Section -->
-        <section id="contact" class="bg-base-light py-20 md:py-28">
-            <div class="container mx-auto px-6">
-                <div class="bg-off-white rounded-2xl shadow-2xl p-8 md:p-16 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-base-dark">Let's Build Your <span class="gradient-text">New Website</span></h2>
-                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                        Ready for a complete, hassle-free web solution? Reach out to us directly. We'll get back to you within one business day to discuss your project.
+        <section id="contact" class="relative bg-base-light py-20 md:py-28 overflow-hidden section-divider">
+            <div class="services-bg-pattern"></div>
+            <div class="container mx-auto px-6 relative">
+                <div class="glassmorphism-container p-8 md:p-16 text-center">
+                    <div class="aurora-bg">
+                        <div class="aurora-shape aurora-shape-1"></div>
+                        <div class="aurora-shape aurora-shape-2"></div>
+                    </div>
+                    <div class="relative z-10">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white">Let's Build Your <span class="gradient-text">Next-Gen Website.</span></h2>
+                    <p class="mt-6 text-lg text-gray-300 max-w-3xl mx-auto">
+                        Have a project in mind? We combine cutting-edge technology with stunning design to bring your vision to life. Reach out and let's get started.
                     </p>
-                    <div class="mt-10">
-                         <a href="mailto:hello@clrcache.solutions" class="bg-primary text-white font-bold px-10 py-4 rounded-lg shadow-xl hover:bg-primary-dark transition duration-300 text-xl">
-                            hello@clrcache.solutions
+                    <div class="mt-12">
+                        <a href="contact.html" class="btn btn-cta text-white font-bold text-lg">
+                            Let's Build
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
                         </a>
                     </div>
+                </div>
                 </div>
             </div>
         </section>
@@ -447,7 +394,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-base-dark border-t border-base-light/50">
+    <footer class="bg-base-dark border-t border-base-light/50 section-divider">
         <div class="container mx-auto px-6 py-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <p class="text-lg font-bold text-off-white">CLRCACHE <span class="text-primary">Solutions</span></p>
@@ -465,6 +412,8 @@
             </div>
         </div>
     </footer>
+
+
 
     <script src="js/main.js" defer></script>
 

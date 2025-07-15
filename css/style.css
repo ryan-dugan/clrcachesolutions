@@ -229,9 +229,77 @@
 }
 
 .highlight-col {
-    background: linear-gradient(120deg, rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.25), rgba(168, 85, 247, 0.15));
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: linear-gradient(120deg, rgba(168, 85, 247, 0.1), rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.1));
     background-size: 200% 200%;
-    animation: shimmer 5s ease infinite;
-    border-left: 2px solid rgba(168, 85, 247, 0.3);
-    box-shadow: inset 3px 0px 8px -4px rgba(168, 85, 247, 0.4);
+    animation: shimmer 8s ease infinite;
+    border-left: 2px solid rgba(168, 85, 247, 0.2);
+    box-shadow: inset 2px 0px 6px -2px rgba(168, 85, 247, 0.3);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease-in-out;
+}
+
+.highlight-col::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    background: linear-gradient(to right, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.3), rgba(139, 92, 246, 0.3));
+    background-size: 200% auto;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.highlight-col-hover {
+    transform: scale(1.015);
+    box-shadow: inset 3px 0px 15px -3px rgba(192, 38, 211, 0.4);
+    animation: none; /* Disable the base shimmer on hover */
+}
+
+.highlight-col-hover::before {
+    opacity: 1;
+    animation: gradient-slide 3s linear infinite;
+}
+
+/* Final CTA Button Style */
+.btn-cta {
+    background-image: linear-gradient(to right, #8B5CF6 0%, #EC4899 50%, #8B5CF6 100%);
+    background-size: 200% auto;
+    transition: background-position 0.5s ease;
+}
+
+.btn-cta:hover {
+    background-position: right center; /* change the direction of the change here */
+}
+
+/* Keyframes for the contact card background */
+@keyframes shimmer-bg {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes gradient-slide {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* --- Section Divider --- */
+.section-divider {
+    position: relative;
+}
+
+.section-divider::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0) 0%, rgba(139, 92, 246, 0.5) 50%, rgba(139, 92, 246, 0) 100%);
 }
