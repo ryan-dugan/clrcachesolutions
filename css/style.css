@@ -289,6 +289,122 @@
     }
 }
 
+/* --- Hero Terminal --- */
+.terminal-icon {
+    transition: opacity 300ms ease-in-out 200ms;
+}
+
+.terminal-interface {
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+
+/* HERO TERMINAL - EXPANSION ANIMATION */
+#terminal-container {
+    z-index: 40; /* Sit below the header (z-50) */
+    inset: 3rem; /* Equivalent to inset-12 */
+    transition: transform 500ms ease-in-out, inset 500ms ease-in-out;
+}
+
+/* Default state of the terminal (when not expanded) */
+#hero-visual-container:not(.is-expanded) #terminal-container {
+    transform: translateX(0) translateY(0) rotate(-6deg) scale(1);
+}
+
+#hero-visual-container {
+    transition: height 500ms ease-in-out;
+}
+
+#hero-visual-container.is-expanded {
+    height: 28rem; /* 448px - A bit smaller to prevent cutoff */
+}
+
+#hero-visual-container.is-expanded #terminal-container {
+    transform: translateX(4rem) translateY(2rem) rotate(0deg) scale(1.25);
+    inset: 1rem; /* inset-4 */
+    z-index: 45;
+}
+
+#decorative-bg-card {
+    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+}
+
+/* Animate decorative card on hover */
+#hero-visual-container.is-expanded #decorative-bg-card {
+    transform: rotate(0deg);
+    opacity: 0;
+}
+
+/* Change terminal background to black on hover */
+#terminal-container:hover .terminal-bg {
+    background-color: #000;
+}
+
+/* --- Animation States & Sequencing --- */
+
+/* EXPANDED STATE */
+#hero-visual-container.is-expanded .terminal-icon {
+    opacity: 0;
+    transition-delay: 0ms;
+}
+#hero-visual-container.is-expanded .terminal-interface {
+    opacity: 1;
+    transition-delay: 200ms;
+}
+
+/* DEFAULT (CLOSED) STATE */
+#hero-visual-container:not(.is-expanded) .terminal-icon {
+    opacity: 1;
+    transition-delay: 200ms;
+}
+#hero-visual-container:not(.is-expanded) .terminal-interface {
+    opacity: 0;
+    transition-delay: 0ms;
+}
+
+/* CLOSING STATE - These rules override the '.is-expanded' state to animate back to default */
+#hero-visual-container.is-closing {
+    height: 24rem; /* Default h-96 */
+}
+
+#hero-visual-container.is-closing #terminal-container {
+    transform: translateX(0) translateY(0) rotate(-6deg) scale(1);
+    inset: 3rem;
+}
+
+#hero-visual-container.is-closing #decorative-bg-card {
+    transform: rotate(6deg);
+    opacity: 1;
+}
+
+#hero-visual-container.is-closing .terminal-icon {
+    opacity: 1;
+    transition-delay: 200ms; /* Icon fades in after a delay */
+}
+
+#hero-visual-container.is-closing .terminal-interface {
+    opacity: 0;
+    transition-delay: 0ms; /* Interface fades out immediately */
+}
+
+#terminal-cursor,
+.blinking-text {
+    animation: blink 1s step-end infinite;
+}
+
+.terminal-prompt-glow {
+    text-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+}
+
+@keyframes blink {
+    from, to {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
 /* --- Section Divider --- */
 .section-divider {
     position: relative;
