@@ -387,13 +387,23 @@
     transition-delay: 0ms; /* Interface fades out immediately */
 }
 
+#terminal-history > div {
+    white-space: pre-wrap; /* Preserve whitespace for formatting */
+}
+
 #terminal-cursor,
 .blinking-text {
     animation: blink 1s step-end infinite;
 }
 
 .terminal-prompt-glow {
-    text-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+    text-shadow: 0 0 5px rgba(52, 211, 153, 0.5), 0 0 10px rgba(52, 211, 153, 0.3);
+}
+
+.command-line-prompt {
+    background-color: #000;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
 }
 
 @keyframes blink {

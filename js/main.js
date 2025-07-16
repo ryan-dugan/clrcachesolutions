@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // --- Element Declarations ---
-    const navLinks = document.querySelectorAll('header a[href^="#"]');
+    const navLinks = document.querySelectorAll('nav a');
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const yearSpan = document.getElementById('year');
@@ -13,8 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentLine = '';
     let hasBooted = false;
     let isBooting = false;
+    let commandHistory = [];
+    let historyIndex = -1;
 
-    // --- Terminal Expansion Logic ---
+    // --- Data Constants ---
     const bootCommands = [
         '> Initializing CLRCACHE Terminal v1.0...',
         '> Boot sequence started [OK]',
@@ -26,8 +28,31 @@ document.addEventListener('DOMContentLoaded', function() {
         '> Injecting brand personality... ✓'
     ];
 
-    const welcomeMessage = 'Welcome to the CLRCACHE Terminal.';
+    const welcomeMessage = 'Welcome to CLRCache Solutions. Type `help` for a list of commands.';
+    const systemInfo = [
+        'System Info:',
+        '  Owner ............ Ryan Dugan',
+        '  Build Type ....... Static Web Application',
+        '  Render Engine .... HTML/CSS/JS (Hand-Coded)',
+        '  Load Time Target . < 1s',
+        '  Mobile Support ... 100% Responsive',
+        '  SEO Framework .... Integrated',
+        '  Version .......... 2025.1',
+        '  Status ........... Ready for Deployment'
+    ];
 
+    const helpText = [
+        'Available Commands:',
+        '  solution    - See what\'s included in the package',
+        '  process     - Learn about our development process',
+        '  work        - Browse past projects',
+        '  about       - Learn more about our team and mission',
+        '  contact     - Get in touch with us',
+        '  help        - Reprint this list',
+        '  clear       - Clear the terminal screen'
+    ];
+
+    // --- Core Functions ---
     function runBootSequence() {
         let i = 0;
         isBooting = true;
@@ -39,116 +64,214 @@ document.addEventListener('DOMContentLoaded', function() {
                 terminalHistory.insertBefore(historyLine, inputLineContainer);
                 terminalHistory.scrollTop = terminalHistory.scrollHeight;
                 i++;
-                setTimeout(nextLine, 120); // Delay for next line
+                setTimeout(nextLine, 120);
             } else {
-                const blankLine = document.createElement('div');
-                blankLine.innerHTML = '&nbsp;';
-                terminalHistory.insertBefore(blankLine, inputLineContainer);
+                const blankLineAfterBoot = document.createElement('div');
+                blankLineAfterBoot.innerHTML = '&nbsp;';
+                terminalHistory.insertBefore(blankLineAfterBoot, inputLineContainer);
 
-                const welcomeLine = document.createElement('div');
-                welcomeLine.textContent = welcomeMessage;
-                terminalHistory.insertBefore(welcomeLine, inputLineContainer);
-                terminalHistory.scrollTop = terminalHistory.scrollHeight;
-                isBooting = false; // Re-enable input
+                setTimeout(() => {
+                    let j = 0;
+                    function nextInfoLine() {
+                        if (j < systemInfo.length) {
+                            const infoLine = document.createElement('div');
+                            infoLine.textContent = systemInfo[j];
+                            terminalHistory.insertBefore(infoLine, inputLineContainer);
+                            terminalHistory.scrollTop = terminalHistory.scrollHeight;
+                            j++;
+                            setTimeout(nextInfoLine, 100);
+                        } else {
+                            setTimeout(() => {
+                                const blankLine1 = document.createElement('div');
+                                blankLine1.innerHTML = '&nbsp;';
+                                terminalHistory.insertBefore(blankLine1, inputLineContainer);
+
+                                const welcomeLine = document.createElement('div');
+                                welcomeLine.textContent = welcomeMessage;
+                                terminalHistory.insertBefore(welcomeLine, inputLineContainer);
+
+                                const blankLine2 = document.createElement('div');
+                                blankLine2.innerHTML = '&nbsp;';
+                                terminalHistory.insertBefore(blankLine2, inputLineContainer);
+
+                                terminalHistory.scrollTop = terminalHistory.scrollHeight;
+                                isBooting = false;
+                            }, 500);
+                        }
+                    }
+                    nextInfoLine();
+                }, 500);
             }
         }
         nextLine();
     }
 
+    function processCommand(command) {
+        const lowerCaseCommand = command.toLowerCase().trim();
+
+        const navigateTo = (page, pageName) => {
+            const successLine = document.createElement('div');
+            successLine.textContent = `Navigating to ${pageName}...`;
+            terminalHistory.insertBefore(successLine, inputLineContainer);
+            terminalHistory.scrollTop = terminalHistory.scrollHeight;
+            setTimeout(() => {
+                window.location.href = page;
+            }, 1000);
+        };
+
+        switch (lowerCaseCommand) {
+            case 'help':
+                printWithDelay(helpText, 50);
+                break;
+            case 'clear':
+                const childrenToRemove = Array.from(terminalHistory.children).filter(child => child !== inputLineContainer);
+                childrenToRemove.forEach(child => terminalHistory.removeChild(child));
+                break;
+            case 'solution':
+                navigateTo('oursolution.html', 'Our Solution');
+                break;
+            case 'process':
+                navigateTo('process.html', 'Process');
+                break;
+            case 'work':
+                navigateTo('work.html', 'Our Work');
+                break;
+            case 'about':
+                navigateTo('about.html', 'About Us');
+                break;
+            case 'contact':
+                navigateTo('contact.html', 'Contact');
+                break;
+            default:
+                const errorLine = document.createElement('div');
+                errorLine.textContent = `Command not found: "${command}". Type 'help' for a list of commands.`;
+                terminalHistory.insertBefore(errorLine, inputLineContainer);
+                break;
+        }
+    }
+
+    function printWithDelay(lines, delay) {
+        let i = 0;
+        function nextLine() {
+            if (i < lines.length) {
+                const line = document.createElement('div');
+                line.textContent = lines[i];
+                terminalHistory.insertBefore(line, inputLineContainer);
+                terminalHistory.scrollTop = terminalHistory.scrollHeight;
+                i++;
+                setTimeout(nextLine, delay);
+            }
+        }
+        nextLine();
+    }
+
+    // --- Event Listeners ---
     if (terminalContainer && heroVisualContainer) {
-        terminalContainer.addEventListener('mouseenter', () => {
-            heroVisualContainer.classList.add('is-expanded');
+        heroVisualContainer.addEventListener('mouseenter', () => {
+            // Remove the closing class to prevent animation conflicts
+            heroVisualContainer.classList.remove('is-closing');
+
+            // Use requestAnimationFrame to ensure the class is re-added after the browser has processed the removal
+            requestAnimationFrame(() => {
+                heroVisualContainer.classList.add('is-expanded');
+            });
+
             if (!hasBooted) {
-                hasBooted = true; // Set flag immediately to prevent re-triggering
+                hasBooted = true;
                 runBootSequence();
             }
         });
 
         heroVisualContainer.addEventListener('mouseleave', () => {
-            if (heroVisualContainer.classList.contains('is-expanded')) {
-                // 1. Add .is-closing to trigger the closing animations.
-                //    The .is-expanded class remains to provide the 'from' state.
-                heroVisualContainer.classList.add('is-closing');
+            heroVisualContainer.classList.add('is-closing');
+            heroVisualContainer.classList.remove('is-expanded');
+        });
 
-                // 2. After the animation duration, remove both classes to reset to the default state.
-                setTimeout(() => {
-                    heroVisualContainer.classList.remove('is-expanded');
-                    heroVisualContainer.classList.remove('is-closing');
-                }, 500); // Must match the longest transition duration in the CSS
+        heroVisualContainer.addEventListener('animationend', (e) => {
+            if (e.animationName === 'contract') {
+                heroVisualContainer.classList.remove('is-closing');
             }
         });
     }
 
-    // --- Smooth Scrolling ---
+    document.addEventListener('keydown', (e) => {
+        if (isBooting || !heroVisualContainer.classList.contains('is-expanded')) return;
+        e.preventDefault();
+
+        if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
+            currentLine += e.key;
+            terminalInput.textContent = currentLine;
+        } else if (e.key === 'Backspace') {
+            currentLine = currentLine.slice(0, -1);
+            terminalInput.textContent = currentLine;
+        } else if (e.key === 'Enter') {
+            if (currentLine.trim() === '') return;
+            const historyLine = document.createElement('div');
+            historyLine.innerHTML = `&gt; ${currentLine}`;
+            terminalHistory.insertBefore(historyLine, inputLineContainer);
+            commandHistory.push(currentLine);
+            historyIndex = commandHistory.length;
+            processCommand(currentLine);
+            currentLine = '';
+            terminalInput.textContent = '';
+            terminalHistory.scrollTop = terminalHistory.scrollHeight;
+        } else if (e.key === 'ArrowUp') {
+            if (historyIndex > 0) {
+                historyIndex--;
+                currentLine = commandHistory[historyIndex];
+                terminalInput.textContent = currentLine;
+            }
+        } else if (e.key === 'ArrowDown') {
+            if (historyIndex < commandHistory.length - 1) {
+                historyIndex++;
+                currentLine = commandHistory[historyIndex];
+                terminalInput.textContent = currentLine;
+            } else {
+                historyIndex = commandHistory.length;
+                currentLine = '';
+                terminalInput.textContent = '';
+            }
+        }
+    });
+
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
 
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            // Only prevent default and scroll for on-page links
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
             }
+            // For external links (e.g., 'about.html'), do nothing and let the browser navigate.
         });
     });
 
-    // --- Mobile Menu Toggle ---
-    if (mobileMenuButton && mobileMenu) {
+    if (mobileMenuButton) {
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
     }
 
-    // --- Footer Year ---
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // --- Hero Terminal Input ---
-    if (terminalContainer && terminalHistory && terminalInput) {
-        document.addEventListener('keydown', (e) => {
-            if (terminalContainer.matches(':hover') && !isBooting) {
-                e.preventDefault();
-
-                if (e.key === 'Enter') {
-                    if (currentLine.trim() !== '') {
-                        const historyLine = document.createElement('div');
-                        historyLine.textContent = `> ${currentLine}`;
-                        // Insert the new history line before the input line
-                        terminalHistory.insertBefore(historyLine, inputLineContainer);
-                        currentLine = '';
-                        // Ensure the history view scrolls to the bottom to show the latest command
-                        terminalHistory.scrollTop = terminalHistory.scrollHeight;
-                    }
-                } else if (e.key === 'Backspace') {
-                    currentLine = currentLine.slice(0, -1);
-                } else if (e.key.length === 1 && !e.ctrlKey && !e.metaKey) {
-                    currentLine += e.key;
-                }
-
-                terminalInput.textContent = currentLine;
-            }
-        });
-    }
-
-    // --- Comparison Table Hover Effect ---
     if (table) {
-        const highlightCells = table.querySelectorAll('.highlight-col');
-
-        const addHoverClass = () => {
-            highlightCells.forEach(cell => cell.classList.add('highlight-col-hover'));
-        };
-
-        const removeHoverClass = () => {
-            highlightCells.forEach(cell => cell.classList.remove('highlight-col-hover'));
-        };
-
-        highlightCells.forEach(cell => {
-            cell.addEventListener('mouseenter', addHoverClass);
-            cell.addEventListener('mouseleave', removeHoverClass);
+        const rows = table.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.classList.add('bg-primary', 'text-black');
+            });
+            row.addEventListener('mouseleave', () => {
+                row.classList.remove('bg-primary', 'text-black');
+            });
         });
     }
 });
